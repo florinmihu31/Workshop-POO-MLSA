@@ -1,11 +1,28 @@
-﻿namespace OOP {
+﻿using System;
+
+namespace OOP {
     abstract class Car {
-		private string ownerName;
-		public string OwnerName {
-			get { return ownerName; }
+        public Car() : this("", FuelType.GAS, 0) { }
+
+        public Car(string ownerName, FuelType fuelType, Colour colour)
+        {
+            _ownerName = ownerName;
+            FuelType = fuelType;
+            Colour = colour;
+            NumberOfCars++;
+        }
+
+		private string _ownerName;
+		public string OwnerName
+        {
+            get
+            {
+                return _ownerName;
+            }
+
 			set {
 				if (value.Length > 1) {
-					ownerName = value;
+					_ownerName = value;
 				}
 			}
 		}
@@ -14,19 +31,26 @@
 
 		public Colour Colour { get; set; }
 
-		public abstract int EngineSize { get; }
-
 		public static int NumberOfCars { get; private set; }
 
-		public Car() : this("", FuelType.GAS, 0) { }
+        public static bool operator==(Car car1, Car car2)
+        {
+            return car1.OwnerName == car2.OwnerName &&
+                   car1.FuelType == car2.FuelType &&
+                   car1.Colour == car2.Colour && 
+                   car1.GetType() == car2.GetType();
+        }
 
-		public Car(string ownerName, FuelType fuelType, Colour colour) {
-			this.ownerName = ownerName;
-			FuelType = fuelType;
-			Colour = colour;
-			NumberOfCars++;
-		}
+        public static bool operator!=(Car car1, Car car2)
+        {
+            return !(car1 == car2);
+        }
 
-		public abstract void Drive();
+        public virtual void GetSpecialFeature()
+        {
+            Console.WriteLine("I have no special feature.");
+        }
+
+        public abstract void Drive();
 	}
 }

@@ -7,12 +7,11 @@ namespace OOP {
         public BMW(string ownerName, FuelType fuelType, Colour colour)
             : base(ownerName, fuelType, colour) { }
 
-        public bool IsSportModeOn {
-            get; set;
-        }
+        public bool IsSportModeOn { get; set; }
 
-        public override int EngineSize {
-            get { return 2998; }
+        public override void GetSpecialFeature()
+        {
+            Console.WriteLine("I have sports mode.");
         }
 
         public override void Drive() {

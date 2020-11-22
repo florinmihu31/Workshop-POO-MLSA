@@ -9,7 +9,7 @@ namespace OOP {
             Console.WriteLine(car1.FuelType);
             Console.WriteLine(car1.Colour);
             Console.WriteLine(((Mercedes)car1).IsDrivePilotOn);
-            Console.WriteLine(car1.EngineSize);
+            car1.GetSpecialFeature();
             car1.Drive();
 
             Car car2 = new BMW();
@@ -18,11 +18,14 @@ namespace OOP {
             Console.WriteLine(car2.OwnerName);
             Console.WriteLine(car2.FuelType);
             Console.WriteLine(car2.Colour);
-            Console.WriteLine(((BMW)car2).IsSportModeOn);
-            Console.WriteLine(car2.EngineSize);
+            Console.WriteLine(((BMW) car2).IsSportModeOn);
+            car2.GetSpecialFeature();
             car2.Drive();
 
             Console.WriteLine(Car.NumberOfCars);
+
+            Car car3 = new Mercedes("Florin", FuelType.DIESEL, Colour.WHITE);
+            Console.WriteLine(car1 == car3);
         }
     }
 }
