@@ -28,6 +28,10 @@ namespace OOP {
             circle.Draw();
             IShape square = new Square();
             square.Draw();
+
+            Complex c1 = new Complex(4, 6);
+            Complex c2 = new Complex(6, 3);
+            Console.WriteLine(c1 + c2);
         }
     }
 }
