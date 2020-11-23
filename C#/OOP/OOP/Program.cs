@@ -24,8 +24,10 @@ namespace OOP {
 
             Console.WriteLine(Car.NumberOfCars);
 
-            Car car3 = new Mercedes("Florin", FuelType.DIESEL, Colour.WHITE);
-            Console.WriteLine(car1 == car3);
+            IShape circle = new Circle();
+            circle.Draw();
+            IShape square = new Square();
+            square.Draw();
         }
     }
 }

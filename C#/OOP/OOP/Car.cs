@@ -33,19 +33,6 @@ namespace OOP {
 
 		public static int NumberOfCars { get; private set; }
 
-        public static bool operator==(Car car1, Car car2)
-        {
-            return car1.OwnerName == car2.OwnerName &&
-                   car1.FuelType == car2.FuelType &&
-                   car1.Colour == car2.Colour && 
-                   car1.GetType() == car2.GetType();
-        }
-
-        public static bool operator!=(Car car1, Car car2)
-        {
-            return !(car1 == car2);
-        }
-
         public virtual void GetSpecialFeature()
         {
             Console.WriteLine("I have no special feature.");
