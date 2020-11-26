@@ -11,7 +11,7 @@ namespace OOP {
 
         public override void GetSpecialFeature()
         {
-            Console.WriteLine("I have sports mode.");
+            Console.WriteLine("I have sport mode.");
         }
 
         public override void Drive() {

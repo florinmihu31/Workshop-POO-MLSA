@@ -4,11 +4,11 @@ namespace OOP {
     class Program {
         static void Main(string[] args) {
             Car car1 = new Mercedes("Florin", FuelType.DIESEL, Colour.WHITE);
-            ((Mercedes)car1).IsDrivePilotOn = true;
+            ((Mercedes)car1).IsCruiseControlOn = true;
             Console.WriteLine(car1.OwnerName);
             Console.WriteLine(car1.FuelType);
             Console.WriteLine(car1.Colour);
-            Console.WriteLine(((Mercedes)car1).IsDrivePilotOn);
+            Console.WriteLine(((Mercedes)car1).IsCruiseControlOn);
             car1.GetSpecialFeature();
             car1.Drive();
 
